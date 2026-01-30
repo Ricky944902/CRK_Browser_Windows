@@ -1,0 +1,111 @@
+<Window x:Class="CRK_Browser.HistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRK_Browser"
+        mc:Ignorable="d"
+        Title="历史记录"
+        Height="600"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource BackgroundColor}">
+    <Window.Resources>
+        <!-- 历史记录项样式 -->
+        <Style x:Key="HistoryItemStyle" TargetType="ListViewItem">
+            <Setter Property="Padding" Value="8" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource PrimaryLightColor}" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="{StaticResource PrimaryLightColor}" />
+                                <Setter Property="BorderBrush" Value="{StaticResource PrimaryColor}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <!-- 标题栏 -->
+        <Grid Height="40" Background="{StaticResource PrimaryColor}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="历史记录" Foreground="White" FontSize="16" FontWeight="Medium" Margin="12,0,0,0" VerticalAlignment="Center"/>
+            <Button x:Name="CloseButton" Content="×" Width="40" Height="40" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="CloseButton_Click"/>
+        </Grid>
+        
+        <!-- 工具栏 -->
+        <Border Height="48" Margin="0,40,0,0" Background="{StaticResource BackgroundColor}" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,0,0,1">
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="12,0,0,0" VerticalAlignment="Center">
+                <Button x:Name="ClearButton" Content="清除历史记录" Click="ClearButton_Click"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="0,0,12,0" VerticalAlignment="Center">
+                <TextBlock Text="按日期分组" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                <CheckBox x:Name="GroupByDateCheckBox" IsChecked="True" Click="GroupByDateCheckBox_Click"/>
+            </StackPanel>
+        </Grid>
+        </Border>
+        
+        <!-- 历史记录列表 -->
+        <ListView x:Name="HistoryListView" Margin="0,88,0,0" Background="{StaticResource BackgroundColor}" 
+                  ItemContainerStyle="{StaticResource HistoryItemStyle}" 
+                  MouseDoubleClick="HistoryListView_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="标题" Width="400">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="URL" Width="300">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Url}" TextWrapping="Wrap" Foreground="{StaticResource TextLightColor}" FontSize="12" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="访问时间" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding VisitTime, StringFormat='yyyy-MM-dd HH:mm'}" Foreground="{StaticResource TextLightColor}" FontSize="12" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <!-- 状态栏 -->
+        <Border Height="32" Margin="0,0,0,0" VerticalAlignment="Bottom" Background="{StaticResource BackgroundColor}" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,1,0,0">
+            <Grid>
+            <TextBlock x:Name="StatusText" Margin="12,0,0,0" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource TextLightColor}"/>
+        </Grid>
+        </Border>
+    </Grid>
+</Window>

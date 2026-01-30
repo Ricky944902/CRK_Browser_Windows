@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+    Version 2.0
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+    Example:
+    ...
+    <data name="Name1">
+      <value>this is my long string</value>
+      <comment>this is a comment</comment>
+    </data>
+    <data name="Name2" type="System.Int32, mscorlib">
+      <value>123</value>
+    </data>
+    ...
+  -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Application strings -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>CRK-Browser</value>
+  </data>
+  <data name="NewTab" xml:space="preserve">
+    <value>New Tab</value>
+  </data>
+  <data name="SearchOrEnterUrl" xml:space="preserve">
+    <value>Search or enter URL</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Secure" xml:space="preserve">
+    <value>Secure</value>
+  </data>
+  <data name="Insecure" xml:space="preserve">
+    <value>Insecure</value>
+  </data>
+  
+  <!-- Button text -->
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Bookmarks" xml:space="preserve">
+    <value>Bookmarks</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="NewTabButton" xml:space="preserve">
+    <value>+</value>
+  </data>
+  
+  <!-- Menu text -->
+  <data name="FileMenu" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="EditMenu" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="ViewMenu" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="HistoryMenu" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="BookmarksMenu" xml:space="preserve">
+    <value>Bookmarks</value>
+  </data>
+  <data name="SettingsMenu" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="HelpMenu" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  
+  <!-- Dialog text -->
+  <data name="ConfirmCloseTab" xml:space="preserve">
+    <value>Are you sure you want to close this tab?</value>
+  </data>
+  <data name="ConfirmCloseAllTabs" xml:space="preserve">
+    <value>Are you sure you want to close all tabs?</value>
+  </data>
+  <data name="ErrorLoadingPage" xml:space="preserve">
+    <value>Failed to load page</value>
+  </data>
+  <data name="ErrorInitializingWebView" xml:space="preserve">
+    <value>Failed to initialize WebView2</value>
+  </data>
+  
+  <!-- Language selection -->
+  <data name="Chinese" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  
+  <!-- Other -->
+  <data name="LoadingFailed" xml:space="preserve">
+    <value>Loading failed: {0}</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  
+  <!-- User Authentication -->
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="LoginSuccess" xml:space="preserve">
+    <value>Login successful</value>
+  </data>
+  <data name="LogoutSuccess" xml:space="preserve">
+    <value>Logout successful</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="GuestMode" xml:space="preserve">
+    <value>Guest Mode</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot password?</value>
+  </data>
+  <data name="UsernameExists" xml:space="preserve">
+    <value>Username already exists</value>
+  </data>
+  <data name="InvalidUsernamePassword" xml:space="preserve">
+    <value>Invalid username or password</value>
+  </data>
+  <data name="PleaseEnterUsername" xml:space="preserve">
+    <value>Please enter username</value>
+  </data>
+  <data name="PleaseEnterPassword" xml:space="preserve">
+    <value>Please enter password</value>
+  </data>
+  <data name="UsernameLengthError" xml:space="preserve">
+    <value>Username length should be between 3-20 characters</value>
+  </data>
+  <data name="PasswordLengthError" xml:space="preserve">
+    <value>Password length should be between 6-20 characters</value>
+  </data>
+</root>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRK-Browser - 主页</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 24px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        button:hover {
+            background: #1557b0;
+        }
+        .shortcuts {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .shortcut {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            min-width: 80px;
+            transition: all 0.2s ease;
+        }
+        .shortcut:hover {
+            background: #e8f0fe;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .shortcut a {
+            color: #333333;
+            text-decoration: none;
+        }
+        .shortcut a:hover {
+            color: #1a73e8;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #666666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎使用 CRK-Browser</h1>
+        <p>体验快速、安全、智能的现代浏览。</p>
+        
+        <div class="search-box">
+            <input type="text" placeholder="搜索或输入网址" id="searchInput">
+            <button onclick="search()">搜索</button>
+        </div>
+        
+        <div class="shortcuts">
+            <div class="shortcut"><a href="https://www.google.com">Google</a></div>
+            <div class="shortcut"><a href="https://www.bing.com">Bing</a></div>
+            <div class="shortcut"><a href="https://www.wikipedia.org">Wikipedia</a></div>
+            <div class="shortcut"><a href="https://www.github.com">GitHub</a></div>
+            <div class="shortcut"><a href="https://www.baidu.com">百度</a></div>
+            <div class="shortcut"><a href="https://www.taobao.com">淘宝</a></div>
+        </div>
+        
+        <div class="footer">
+            <p>CRK-Browser v1.0.0 | 基于 WebView2 技术</p>
+        </div>
+    </div>
+    
+    <script>
+        function search() {
+            var query = document.getElementById('searchInput').value;
+            if (query) {
+                if (query.startsWith('http://') || query.startsWith('https://')) {
+                    window.location.href = query;
+                } else {
+                    window.location.href = 'https://www.bing.com/search?q=' + encodeURIComponent(query);
+                }
+            }
+        }
+        
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                search();
+            }
+        });
+    </script>
+</body>
+</html>
